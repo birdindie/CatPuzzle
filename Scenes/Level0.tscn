@@ -29,7 +29,7 @@ script = ExtResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 3, 21 )
 
 [node name="body" parent="player/pivot" index="0"]
-transform = Transform( 2.00902, 0, 0, 0, 1.99098, 0, 0, 0, 2.00902, 0, 0, 0 )
+transform = Transform( 2.03397, 0, 0, 0, 1.96603, 0, 0, 0, 2.03397, 0, 0, 0 )
 
 [node name="EnemyL1" parent="." instance=ExtResource( 8 )]
 
@@ -37,7 +37,7 @@ transform = Transform( 2.00902, 0, 0, 0, 1.99098, 0, 0, 0, 2.00902, 0, 0, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 3, 19 )
 
 [node name="body" parent="EnemyL1/Enemy1L1/pivot" index="0"]
-transform = Transform( 2.00902, 0, 0, 0, 1.99098, 0, 0, 0, 2.00902, 0, 0, 0 )
+transform = Transform( 2.03397, 0, 0, 0, 1.96603, 0, 0, 0, 2.03397, 0, 0, 0 )
 
 [node name="AreaToxica" parent="." instance=ExtResource( 6 )]
 
