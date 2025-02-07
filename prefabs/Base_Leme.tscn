@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Blender/IntensNavioPesca/Base_Leme.glb" type="PackedScene" id=1]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 1, 1, 3.94976 )
+
+[node name="Base_Leme" instance=ExtResource( 1 )]
+
+[node name="StaticBody" type="StaticBody" parent="Base_Leme" index="0" groups=["wall"]]
+
+[node name="CollisionShape" type="CollisionShape" parent="Base_Leme/StaticBody" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0537415, 0, 0.913551 )
+shape = SubResource( 1 )

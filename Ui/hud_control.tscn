@@ -1,0 +1,101 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scripts/hud_control.gd" type="Script" id=1]
+[ext_resource path="res://language/Translate/menu_level/btn_en_save.png" type="Texture" id=2]
+[ext_resource path="res://language/Translate/menu_level/btn_en_restart.png" type="Texture" id=3]
+[ext_resource path="res://language/Translate/menu_level/Hover/btn_press_en_menu.png" type="Texture" id=4]
+[ext_resource path="res://Ui/hud_control.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Assets/Icones/btn_som_ico.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Icones/TimerIcon.png" type="Texture" id=7]
+[ext_resource path="res://language/Translate/menu_level/btn_en_menu.png" type="Texture" id=8]
+[ext_resource path="res://language/Translate/menu_level/Hover/btn_press_en_save.png" type="Texture" id=9]
+[ext_resource path="res://language/Translate/menu_level/Hover/btn_press_en_restart.png" type="Texture" id=10]
+
+[node name="HUDPRINCIPAL" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+margin_left = 576.0
+margin_top = 55.0
+margin_right = 742.0
+margin_bottom = 100.0
+custom_fonts/font = ExtResource( 5 )
+text = "LEVEL: 1"
+align = 1
+valign = 1
+
+[node name="TimerIcon" type="TextureRect" parent="CanvasLayer"]
+margin_left = 824.0
+margin_top = 55.0
+margin_right = 856.0
+margin_bottom = 87.0
+texture = ExtResource( 7 )
+
+[node name="TimerLabel" type="Label" parent="CanvasLayer/TimerIcon"]
+margin_left = 44.0
+margin_right = 105.0
+margin_bottom = 45.0
+custom_fonts/font = ExtResource( 5 )
+text = "0:60"
+
+[node name="SoundToggleButton" type="Button" parent="."]
+margin_left = 1056.0
+margin_top = 52.0
+margin_right = 1138.0
+margin_bottom = 103.0
+custom_fonts/font = ExtResource( 5 )
+text = "OFF"
+flat = true
+icon_align = 1
+
+[node name="SoundToggleButton" type="TextureButton" parent="SoundToggleButton"]
+margin_left = -116.0
+margin_top = -4.0
+margin_right = 92.0
+margin_bottom = 48.0
+texture_normal = ExtResource( 6 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SoundToggleButton"]
+
+[node name="home" type="Button" parent="."]
+margin_left = 40.0
+margin_top = 40.0
+margin_right = 52.0
+flat = true
+
+[node name="home" type="TextureButton" parent="home"]
+margin_left = 10.0
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 8 )
+texture_hover = ExtResource( 4 )
+
+[node name="save" type="Button" parent="."]
+margin_left = 56.0
+margin_top = 40.0
+margin_right = 68.0
+flat = true
+
+[node name="salvar" type="TextureButton" parent="save"]
+margin_left = 139.0
+margin_right = 40.0
+texture_normal = ExtResource( 2 )
+texture_hover = ExtResource( 9 )
+
+[node name="load" type="Button" parent="."]
+margin_left = 72.0
+margin_top = 40.0
+margin_right = 84.0
+flat = true
+
+[node name="load" type="TextureButton" parent="load"]
+margin_left = 270.0
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 3 )
+texture_hover = ExtResource( 10 )

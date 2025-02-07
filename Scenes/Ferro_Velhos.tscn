@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Blender/FerroVelho/Asfalto_Ferro_Velho.glb" type="PackedScene" id=1]
+
+[sub_resource type="BoxShape" id=1]
+
+[node name="Ferro_Velho" type="Spatial"]
+
+[node name="Asfalto_Ferro_Velho" parent="." instance=ExtResource( 1 )]
+
+[node name="StaticBody" type="StaticBody" parent="Asfalto_Ferro_Velho/Asfalto_Ferro_Velho" index="0" groups=["wall"]]
+
+[node name="CollisionShape" type="CollisionShape" parent="Asfalto_Ferro_Velho/Asfalto_Ferro_Velho/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 1 )
+
+[editable path="Asfalto_Ferro_Velho"]

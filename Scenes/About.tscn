@@ -1,0 +1,157 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Meshes/GramasL_v0.tres" type="MeshLibrary" id=1]
+[ext_resource path="res://Scripts/About.gd" type="Script" id=2]
+[ext_resource path="res://solo_env.tres" type="Environment" id=3]
+[ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Fonts/Dosis-Light.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Assets/About/About.png" type="Texture" id=6]
+[ext_resource path="res://language/Translate/menu_level/Hover/btn_press_en_menu.png" type="Texture" id=7]
+[ext_resource path="res://language/Translate/menu_level/btn_en_menu.png" type="Texture" id=8]
+[ext_resource path="res://prefabs/fade.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Itens/Girasol.tscn" type="PackedScene" id=10]
+[ext_resource path="res://prefabs/Cogumelos.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Itens/Arvore3.tscn" type="PackedScene" id=12]
+[ext_resource path="res://prefabs/Water.tscn" type="PackedScene" id=13]
+
+[sub_resource type="CapsuleMesh" id=3]
+
+[sub_resource type="DynamicFont" id=4]
+size = 64
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 25
+font_data = ExtResource( 5 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color( 0.8, 0.8, 0.8, 0.0313726 )
+
+[node name="About" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="player" parent="." instance=ExtResource( 4 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 11, 3, 8 )
+script = null
+
+[node name="Water" parent="." instance=ExtResource( 13 )]
+
+[node name="GridMap" type="GridMap" parent="." groups=["wall"]]
+mesh_library = ExtResource( 1 )
+data = {
+"cells": PoolIntArray( 4, 3, 0, 5, 3, 0, 6, 3, 0, 4, 4, 0, 5, 4, 0, 6, 4, 0, 4, 5, 0, 5, 5, 0, 6, 5, 0, 2, 65529, 0 )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="Cam" type="Spatial" parent="."]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 11, 2, 11 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="target" type="MeshInstance" parent="Cam"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
+visible = false
+mesh = SubResource( 3 )
+
+[node name="Camera" type="Camera" parent="Cam"]
+transform = Transform( -1, -6.18173e-08, 6.18172e-08, 0, 0.707107, 0.707106, -8.74228e-08, 0.707107, -0.707106, 0, 12, -10 )
+environment = ExtResource( 3 )
+projection = 1
+current = true
+size = 30.0
+near = 0.5
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -0.965926, 9.05293e-09, -0.258819, 6.94655e-09, 1, 9.05293e-09, 0.258819, 6.94655e-09, -0.965926, 0.3, 0, -0.2 )
+light_color = Color( 0.635294, 0.541176, 0.207843, 1 )
+light_energy = 0.45
+
+[node name="Arvore3" parent="." instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 3, 11 )
+
+[node name="Cogumelos" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 3, 11 )
+
+[node name="GiraSol" parent="." instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 3, -13 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+visible = false
+anchor_left = 0.00328481
+anchor_top = 0.07
+anchor_right = 1.00328
+anchor_bottom = 0.07
+margin_left = -0.363647
+margin_top = 25.0
+margin_right = -0.363647
+margin_bottom = 107.0
+custom_fonts/font = SubResource( 4 )
+text = "CAT PUZZLE"
+align = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchor_right = 1.0
+margin_top = 50.0
+margin_bottom = 60.0
+
+[node name="Control" type="Control" parent="CanvasLayer/VBoxContainer"]
+margin_right = 1024.0
+size_flags_vertical = 3
+
+[node name="btn_about" type="Button" parent="CanvasLayer/VBoxContainer"]
+margin_top = 4.0
+margin_right = 1024.0
+margin_bottom = 56.0
+custom_colors/font_color_hover = Color( 0.929412, 0.898039, 0.0431373, 1 )
+custom_fonts/font = SubResource( 6 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 5 )
+
+[node name="btn_about" type="TextureButton" parent="CanvasLayer/VBoxContainer/btn_about"]
+margin_right = 157.0
+margin_bottom = 52.0
+texture_normal = ExtResource( 8 )
+texture_hover = ExtResource( 7 )
+expand = true
+
+[node name="Control2" type="Control" parent="CanvasLayer/VBoxContainer"]
+margin_top = 60.0
+margin_right = 1024.0
+margin_bottom = 60.0
+size_flags_vertical = 3
+
+[node name="fade" parent="CanvasLayer" instance=ExtResource( 9 )]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 75.0
+margin_top = 60.0
+margin_right = 896.0
+margin_bottom = 480.0
+rect_scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 6 )
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/btn_about/btn_about" to="." method="_on_btn_about_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

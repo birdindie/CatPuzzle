@@ -1,0 +1,170 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://Meshes/TabuaNavioPesca.tres" type="MeshLibrary" id=1]
+[ext_resource path="res://Scripts/Level1.gd" type="Script" id=2]
+[ext_resource path="res://solo_env.tres" type="Environment" id=3]
+[ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://prefabs/block.tscn" type="PackedScene" id=5]
+[ext_resource path="res://prefabs/Lateral_Direita.tscn" type="PackedScene" id=6]
+[ext_resource path="res://prefabs/save.tscn" type="PackedScene" id=7]
+[ext_resource path="res://prefabs/load.tscn" type="PackedScene" id=8]
+[ext_resource path="res://prefabs/home.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/SoundToggleButton.tscn" type="PackedScene" id=10]
+[ext_resource path="res://prefabs/Water.tscn" type="PackedScene" id=11]
+[ext_resource path="res://prefabs/peixe.tscn" type="PackedScene" id=13]
+[ext_resource path="res://prefabs/Lateral_Esquerda.tscn" type="PackedScene" id=14]
+[ext_resource path="res://prefabs/Base_Leme.tscn" type="PackedScene" id=15]
+[ext_resource path="res://prefabs/Leme.tscn" type="PackedScene" id=16]
+[ext_resource path="res://prefabs/MastroNavioPesca.tscn" type="PackedScene" id=17]
+[ext_resource path="res://prefabs/CaixaMadeiraPeixe.tscn" type="PackedScene" id=18]
+[ext_resource path="res://prefabs/CaixaMadeiraNoPeixe.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Itens/Barrio.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/TimerContainer.tscn" type="PackedScene" id=21]
+[ext_resource path="res://prefabs/Death.tscn" type="PackedScene" id=23]
+[ext_resource path="res://prefabs/fade.tscn" type="PackedScene" id=24]
+
+[sub_resource type="CapsuleMesh" id=3]
+
+[node name="Level6" type="Spatial"]
+script = ExtResource( 2 )
+next_level = 7
+apples = 2
+
+[node name="player" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 3, 1 )
+
+[node name="Water" parent="." instance=ExtResource( 11 )]
+
+[node name="Death" parent="." instance=ExtResource( 23 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, -100, 12 )
+
+[node name="GridMap" type="GridMap" parent="." groups=["wall"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0 )
+mesh_library = ExtResource( 1 )
+data = {
+"cells": PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 65529, 0, 0, 65530, 0, 0, 65535, 0, 0, 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 65529, 1, 0, 65530, 1, 0, 65535, 1, 0, 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 65535, 2, 0, 0, 3, 0, 1, 3, 0, 2, 3, 0, 3, 3, 0, 4, 3, 0, 5, 3, 0, 65530, 3, 0, 65535, 3, 0, 0, 4, 0, 1, 4, 0, 2, 4, 0, 3, 4, 0, 4, 4, 0, 5, 4, 0, 6, 4, 0, 65530, 4, 0, 65535, 4, 0, 0, 5, 0, 1, 5, 0, 2, 5, 0, 3, 5, 0, 4, 5, 0, 5, 5, 0, 6, 5, 0, 65530, 5, 0, 65535, 5, 0, 1, 6, 0, 2, 6, 0, 4, 6, 0, 5, 6, 0, 6, 6, 0, 65530, 6, 0, 65531, 6, 0, 65533, 6, 0, 65534, 6, 0, 65535, 6, 0, 0, 7, 0, 1, 7, 0, 2, 7, 0, 3, 7, 0, 4, 7, 0, 5, 7, 0, 6, 7, 0, 7, 7, 0, 8, 7, 0, 11, 7, 0, 12, 7, 0, 65533, 7, 0, 65534, 7, 0, 65535, 7, 0, -65529, 7, 15, 0, 8, 0, 1, 8, 0, 2, 8, 0, 3, 8, 0, 4, 8, 0, 5, 8, 0, 6, 8, 0, 11, 8, 0, 12, 8, 0, 65533, 8, 0, 65534, 8, 0, 65535, 8, 0, 1, 9, 0, 2, 9, 0, 3, 9, 0, 4, 9, 0, 5, 9, 0, 6, 9, 0, 1, 10, 0, 2, 10, 0, 3, 10, 0, 4, 10, 0, 5, 10, 0, 6, 10, 0, 1, 11, 0, 2, 11, 0, 3, 11, 0, 4, 11, 0, 5, 11, 0, 6, 11, 0 )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="ItensNavio" type="Spatial" parent="."]
+
+[node name="Barrio" parent="ItensNavio" instance=ExtResource( 20 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7, 3, 15 )
+
+[node name="Barrio2" parent="ItensNavio" instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 9, 7, 22 )
+
+[node name="Lateral_Direita" parent="ItensNavio" instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.257, 2, 13.074 )
+
+[node name="Lateral_Esquerda" parent="ItensNavio" instance=ExtResource( 14 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 21, 2, 19 )
+
+[node name="Base_Leme" parent="ItensNavio" instance=ExtResource( 15 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 13, 3, 20 )
+
+[node name="Leme" parent="ItensNavio" instance=ExtResource( 16 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 11, 5, 20 )
+
+[node name="CaixaMadeiraPeixe" parent="ItensNavio" instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 3, 1 )
+
+[node name="CaixaMadeiraPeixe4" parent="ItensNavio" instance=ExtResource( 18 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7, 5, 1 )
+
+[node name="CaixaMadeiraPeixe2" parent="ItensNavio" instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31, 3, 17 )
+
+[node name="CaixaMadeiraNoPeixe" parent="ItensNavio" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 3, 1 )
+
+[node name="CaixaMadeiraPeixe3" parent="ItensNavio" instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 5, 2 )
+
+[node name="CaixaMadeiraNoPeixe3" parent="ItensNavio" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 3, 2 )
+
+[node name="Mastro" parent="ItensNavio" instance=ExtResource( 17 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 13, 3, 11 )
+
+[node name="peixe" parent="." instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 3, 21 )
+
+[node name="peixe2" parent="." instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31, 3, 15 )
+
+[node name="Cam" type="Spatial" parent="."]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 11, 2, 11 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="target" type="MeshInstance" parent="Cam"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
+visible = false
+mesh = SubResource( 3 )
+
+[node name="Camera" type="Camera" parent="Cam"]
+transform = Transform( -1, 6.18173e-08, -6.18172e-08, 0, 0.707107, 0.707106, 8.74228e-08, 0.707107, -0.707106, 0, 12, -10 )
+environment = ExtResource( 3 )
+projection = 1
+current = true
+size = 30.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -0.965926, 9.05292e-09, -0.258819, 6.94655e-09, 1, 9.05292e-09, 0.258819, 6.94655e-09, -0.965926, 0.3, 0, -0.2 )
+light_color = Color( 0.636719, 0.541653, 0.208923, 1 )
+light_energy = 0.42
+shadow_enabled = true
+
+[node name="home" parent="." instance=ExtResource( 9 )]
+
+[node name="salvar" parent="." instance=ExtResource( 7 )]
+
+[node name="load" parent="." instance=ExtResource( 8 )]
+
+[node name="SoundToggleButton" parent="." instance=ExtResource( 10 )]
+
+[node name="block" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 15 )
+
+[node name="block6" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 3, 7 )
+
+[node name="block7" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 3, 13 )
+
+[node name="block2" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3, 3 )
+
+[node name="block3" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 3, 13 )
+
+[node name="block4" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 5, 22 )
+
+[node name="TimerContainer" parent="." instance=ExtResource( 21 )]
+
+[node name="fade" parent="." instance=ExtResource( 24 )]
+
+[connection signal="body_entered" from="Death/DeathZones" to="." method="_on_DeathZones_body_entered"]
+[connection signal="body_entered" from="peixe" to="peixe" method="_on_peixe_body_entered"]
+[connection signal="body_entered" from="peixe2" to="peixe2" method="_on_peixe_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="home/home" to="." method="_on_home_pressed"]
+[connection signal="pressed" from="salvar/salvar" to="." method="_on_salvar_pressed"]
+[connection signal="pressed" from="load/load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="SoundToggleButton/SoundToggleButton" to="." method="_on_SoundToggleButton_pressed"]
+
+[editable path="Death"]
+[editable path="home"]
+[editable path="salvar"]
+[editable path="load"]
+[editable path="SoundToggleButton"]

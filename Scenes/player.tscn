@@ -1,0 +1,398 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://Scripts/player.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Blender/Personagem/MiaMochila.glb" type="PackedScene" id=3]
+
+[sub_resource type="BoxShape" id=1]
+
+[sub_resource type="Animation" id=2]
+tracks/0/type = "value"
+tracks/0/path = NodePath("pivot:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 1, 0 ), Vector3( 0, 1, 0 ), Vector3( 0, 1.2, 0 ), Vector3( 0, 1, 0 ), Vector3( 0, 1.15, 0 ), Vector3( 0, 1, 0 ), Vector3( 0, 1.1, 0 ), Vector3( 0, 1, 0 ), Vector3( 0, 1.05, 0 ), Vector3( 0, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("pivot:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ), Vector3( -180, 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("pivot:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("pivot/body:translation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.05 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, -1, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("pivot/body:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("pivot/body:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 2, 2, 2 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.3
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("pivot/body:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("pivot/body:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 15, 0, 0 ), Vector3( 0, 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("pivot/body:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 2, 2, 2 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("pivot/body:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("pivot/body:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("pivot/body:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 2, 2, 2 ), Vector3( 2.1, 1.9, 2.1 ), Vector3( 2, 2, 2 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("pivot/body:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 1, 0 ), Vector3( 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("pivot/body:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( -15, 0, 0 ), Vector3( 0, 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("pivot/body:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 2, 2, 2 ) ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "walk"
+
+[sub_resource type="AnimationNodeAnimation" id=7]
+animation = "hurt"
+
+[sub_resource type="AnimationNodeAnimation" id=8]
+animation = "fall"
+
+[sub_resource type="AnimationNodeAnimation" id=9]
+animation = "idle"
+
+[sub_resource type="AnimationNodeTransition" id=10]
+input_count = 2
+input_0/name = "idle"
+input_0/auto_advance = false
+input_1/name = "fall"
+input_1/auto_advance = false
+
+[sub_resource type="AnimationNodeOneShot" id=11]
+
+[sub_resource type="AnimationNodeTimeScale" id=12]
+
+[sub_resource type="AnimationNodeTimeScale" id=13]
+
+[sub_resource type="AnimationNodeOneShot" id=14]
+
+[sub_resource type="AnimationNodeBlendTree" id=15]
+graph_offset = Vector2( -358.703, 35.5637 )
+nodes/Animation/node = SubResource( 9 )
+nodes/Animation/position = Vector2( -560, 140 )
+"nodes/Animation 2/node" = SubResource( 6 )
+"nodes/Animation 2/position" = Vector2( -560, 360 )
+"nodes/Animation 3/node" = SubResource( 7 )
+"nodes/Animation 3/position" = Vector2( -100, 380 )
+"nodes/Animation 4/node" = SubResource( 8 )
+"nodes/Animation 4/position" = Vector2( 580, 320 )
+nodes/Transition/node = SubResource( 10 )
+nodes/Transition/position = Vector2( 820, 140 )
+nodes/hurt/node = SubResource( 11 )
+nodes/hurt/position = Vector2( 360, 160 )
+nodes/hurt_time/node = SubResource( 12 )
+nodes/hurt_time/position = Vector2( 120, 300 )
+nodes/idle_time/node = SubResource( 13 )
+nodes/idle_time/position = Vector2( -340, 140 )
+nodes/output/position = Vector2( 1120, 140 )
+nodes/walk/node = SubResource( 14 )
+nodes/walk/position = Vector2( -100, 140 )
+node_connections = [ "Transition", 0, "hurt", "Transition", 1, "Animation 4", "hurt", 0, "walk", "hurt", 1, "hurt_time", "hurt_time", 0, "Animation 3", "idle_time", 0, "Animation", "output", 0, "Transition", "walk", 0, "idle_time", "walk", 1, "Animation 2" ]
+
+[sub_resource type="Curve" id=19]
+min_value = 0.5
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.25, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=31]
+curve = SubResource( 19 )
+
+[sub_resource type="ParticlesMaterial" id=16]
+emission_shape = 1
+emission_sphere_radius = 1.0
+flag_align_y = true
+spread = 90.0
+flatness = 1.0
+gravity = Vector3( 0, 5, 0 )
+initial_velocity = 2.0
+initial_velocity_random = 1.0
+scale = 0.1
+scale_random = 0.3
+scale_curve = SubResource( 31 )
+color = Color( 1, 1, 1, 0.411765 )
+
+[sub_resource type="SpatialMaterial" id=32]
+flags_transparent = true
+vertex_color_use_as_albedo = true
+albedo_color = Color( 0.772549, 0.980392, 1, 0.152941 )
+
+[sub_resource type="SphereMesh" id=18]
+material = SubResource( 32 )
+radius = 0.5
+radial_segments = 8
+rings = 4
+
+[sub_resource type="SphereShape" id=28]
+radius = 0.509856
+
+[sub_resource type="Curve" id=21]
+min_value = 0.5
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.25, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=20]
+curve = SubResource( 21 )
+
+[sub_resource type="ParticlesMaterial" id=29]
+emission_shape = 1
+emission_sphere_radius = 1.0
+flag_align_y = true
+spread = 95.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 0.1
+initial_velocity_random = 1.0
+scale = 2.0
+scale_random = 1.0
+scale_curve = SubResource( 20 )
+color = Color( 0.74902, 0.72549, 0.898039, 0.521569 )
+
+[sub_resource type="SpatialMaterial" id=17]
+flags_transparent = true
+vertex_color_use_as_albedo = true
+albedo_color = Color( 0.772549, 0.980392, 1, 0.152941 )
+
+[sub_resource type="SphereMesh" id=30]
+material = SubResource( 17 )
+radius = 0.5
+radial_segments = 8
+rings = 4
+
+[node name="player" type="StaticBody" groups=["player"]]
+collision_mask = 236
+script = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 1 )
+
+[node name="tw_m" type="Tween" parent="."]
+
+[node name="tw_r" type="Tween" parent="."]
+
+[node name="ray1" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 2 )
+enabled = true
+cast_to = Vector3( 0, -2, 0 )
+
+[node name="ray2" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 4 )
+enabled = true
+cast_to = Vector3( 0, -2, 0 )
+
+[node name="ray3" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 6 )
+enabled = true
+cast_to = Vector3( 0, -2, 0 )
+
+[node name="pivot" type="Spatial" parent="."]
+
+[node name="body" type="MeshInstance" parent="pivot"]
+transform = Transform( 2.09285, 0, 0, 0, 1.90715, 0, 0, 0, 2.09285, 0, 0, 0 )
+
+[node name="MiaMochila" parent="pivot/body" instance=ExtResource( 3 )]
+transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/fall = SubResource( 2 )
+anims/hurt = SubResource( 3 )
+anims/idle = SubResource( 4 )
+anims/walk = SubResource( 5 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 15 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/Transition/current = 0
+parameters/hurt/active = false
+parameters/hurt_time/scale = 1.5
+parameters/idle_time/scale = 1.5
+parameters/walk/active = false
+
+[node name="ray_down" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
+enabled = true
+
+[node name="MoveParticles" type="Particles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0090504, -0.00158501 )
+emitting = false
+amount = 24
+lifetime = 0.5
+explosiveness = 1.0
+fixed_fps = 30
+process_material = SubResource( 16 )
+draw_pass_1 = SubResource( 18 )
+
+[node name="StopSound" type="AudioStreamPlayer3D" parent="."]
+unit_db = 80.0
+
+[node name="EfeitoMorte" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="EfeitoMorte"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 28 )
+
+[node name="Particles" type="Particles" parent="EfeitoMorte"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.763014, -0.00158501 )
+emitting = false
+amount = 200
+lifetime = 0.5
+explosiveness = 1.0
+fixed_fps = 30
+process_material = SubResource( 29 )
+draw_pass_1 = SubResource( 30 )

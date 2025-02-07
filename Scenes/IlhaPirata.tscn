@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Blender/lhaPirata/SoloIlha_cinza.glb" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Blender/lhaPirata/SoloIlha_areia.glb" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Blender/lhaPirata/SoloIlha_verde.glb" type="PackedScene" id=3]
+
+[sub_resource type="BoxShape" id=1]
+
+[sub_resource type="BoxShape" id=2]
+
+[sub_resource type="BoxShape" id=3]
+
+[node name="IlhaPirata" type="Spatial"]
+
+[node name="SoloIlha_areia" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2 )
+
+[node name="StaticBody" type="StaticBody" parent="SoloIlha_areia"]
+
+[node name="CollisionShape" type="CollisionShape" parent="SoloIlha_areia/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 1 )
+
+[node name="SoloIlha_cinza" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2 )
+
+[node name="StaticBody" type="StaticBody" parent="SoloIlha_cinza/SoloIlha_cinza" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="SoloIlha_cinza/SoloIlha_cinza/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 2 )
+
+[node name="SoloIlha_verde" parent="." instance=ExtResource( 3 )]
+
+[node name="StaticBody" type="StaticBody" parent="SoloIlha_verde/SoloIlha_verde" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="SoloIlha_verde/SoloIlha_verde/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 3 )
+
+[editable path="SoloIlha_areia"]
+[editable path="SoloIlha_cinza"]
+[editable path="SoloIlha_verde"]

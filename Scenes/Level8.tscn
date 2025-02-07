@@ -1,0 +1,190 @@
+[gd_scene load_steps=30 format=2]
+
+[ext_resource path="res://Meshes/SoloIlhaPirata.tres" type="MeshLibrary" id=1]
+[ext_resource path="res://Scripts/Level1.gd" type="Script" id=2]
+[ext_resource path="res://solo_env.tres" type="Environment" id=3]
+[ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://prefabs/block.tscn" type="PackedScene" id=5]
+[ext_resource path="res://prefabs/CoqueiroDino.tscn" type="PackedScene" id=6]
+[ext_resource path="res://prefabs/save.tscn" type="PackedScene" id=7]
+[ext_resource path="res://prefabs/load.tscn" type="PackedScene" id=8]
+[ext_resource path="res://prefabs/home.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/SoundToggleButton.tscn" type="PackedScene" id=10]
+[ext_resource path="res://prefabs/Water.tscn" type="PackedScene" id=11]
+[ext_resource path="res://prefabs/peixe.tscn" type="PackedScene" id=13]
+[ext_resource path="res://prefabs/PonteMadeira.tscn" type="PackedScene" id=14]
+[ext_resource path="res://prefabs/Arbusto.tscn" type="PackedScene" id=15]
+[ext_resource path="res://prefabs/BarrioIlha.tscn" type="PackedScene" id=16]
+[ext_resource path="res://prefabs/MadeiraChao2.tscn" type="PackedScene" id=17]
+[ext_resource path="res://prefabs/PlantaFlorAmarela.tscn" type="PackedScene" id=18]
+[ext_resource path="res://prefabs/Mastro.tscn" type="PackedScene" id=19]
+[ext_resource path="res://prefabs/CaveiraRocha.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/TimerContainer.tscn" type="PackedScene" id=21]
+[ext_resource path="res://prefabs/CavernaIlhaCaveira.tscn" type="PackedScene" id=23]
+[ext_resource path="res://prefabs/Bau.tscn" type="PackedScene" id=24]
+[ext_resource path="res://prefabs/Canhao.tscn" type="PackedScene" id=25]
+[ext_resource path="res://prefabs/ArbustoAmareloDino.tscn" type="PackedScene" id=26]
+[ext_resource path="res://prefabs/fade.tscn" type="PackedScene" id=27]
+[ext_resource path="res://prefabs/Death.tscn" type="PackedScene" id=28]
+[ext_resource path="res://prefabs/MovelVerticalMadeira_Ilha.tscn" type="PackedScene" id=29]
+[ext_resource path="res://prefabs/PonteMadeiraG.tscn" type="PackedScene" id=30]
+
+[sub_resource type="CapsuleMesh" id=3]
+
+[node name="Level8" type="Spatial"]
+script = ExtResource( 2 )
+next_level = 9
+
+[node name="player" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 3, 3 )
+
+[node name="Water" parent="." instance=ExtResource( 11 )]
+
+[node name="Death" parent="." instance=ExtResource( 28 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -100, 11 )
+
+[node name="GridMap" type="GridMap" parent="." groups=["wall"]]
+mesh_library = ExtResource( 1 )
+data = {
+"cells": PoolIntArray( 3, 0, 1, 4, 0, 1, 5, 0, 1, 6, 0, 1, 7, 0, 1, 8, 0, 1, 9, 0, 1, 10, 0, 1, 11, 0, 1, 65531, 0, 1, 65532, 0, 1, 65533, 0, 1, 65534, 0, 1, 9, 1, 1, 10, 1, 1, 11, 1, 1, 65532, 1, 1, 65533, 1, 1, 3, 2, 0, 4, 2, 0, 5, 2, 0, 7, 2, 0, 9, 2, 1, 10, 2, 1, 11, 2, 1, 65532, 2, 1, 65539, 2, 0, 65540, 2, 0, 65541, 2, 0, 65543, 2, 0, 131069, 2, 0, 131070, 2, 0, 131071, 2, 0, 131075, 2, 0, 131076, 2, 0, 131077, 2, 0, 131078, 2, 0, 131079, 2, 0, 196605, 2, 0, 196606, 2, 0, 196607, 2, 0, 9, 3, 1, 10, 3, 1, 11, 3, 1, 12, 3, 1, 13, 3, 1, 14, 3, 1, 65532, 3, 1, 131069, 3, 0, 131075, 3, 0, 131076, 3, 0, 131077, 3, 0, 196611, 3, 0, 196612, 3, 0, 196613, 3, 0, 262141, 3, 0, 262142, 3, 0, 262143, 3, 0, 9, 4, 1, 10, 4, 1, 11, 4, 1, 12, 4, 1, 13, 4, 1, 14, 4, 1, 65532, 4, 1, 131069, 4, 0, 9, 5, 1, 10, 5, 1, 11, 5, 1, 12, 5, 1, 13, 5, 1, 14, 5, 1, 65532, 5, 1, 131069, 5, 0, 9, 6, 1, 10, 6, 1, 11, 6, 1, 12, 6, 1, 13, 6, 1, 14, 6, 1, 65532, 6, 1, 9, 7, 1, 10, 7, 1, 11, 7, 1, 12, 7, 1, 13, 7, 1, 14, 7, 1, 65532, 7, 1, -65529, 7, 15, 3, 8, 1, 4, 8, 1, 5, 8, 1, 6, 8, 1, 9, 8, 1, 10, 8, 1, 11, 8, 1, 12, 8, 1, 13, 8, 1, 14, 8, 1, 65532, 8, 1, 65534, 8, 1, 3, 9, 1, 4, 9, 1, 5, 9, 1, 6, 9, 1, 9, 9, 1, 10, 9, 1, 11, 9, 1, 12, 9, 1, 13, 9, 1, 14, 9, 1, 65532, 9, 1, 65533, 9, 1, 65534, 9, 1, 3, 10, 1, 4, 10, 1, 5, 10, 1, 6, 10, 1, 9, 10, 1, 10, 10, 1, 11, 10, 1, 12, 10, 1, 13, 10, 1, 14, 10, 1, 65532, 10, 1, 65533, 10, 1, 65534, 10, 1, 3, 12, 1, 4, 12, 1, 5, 12, 1, 6, 12, 1, 3, 13, 1, 4, 13, 1, 5, 13, 1, 6, 13, 1, 11, 13, 1, 12, 13, 1, 13, 13, 1, 3, 14, 1, 4, 14, 1, 5, 14, 1, 6, 14, 1, 11, 14, 1, 12, 14, 1, 13, 14, 1, 0, 65534, 2, 1, 65534, 2, 3, 65534, 2, 4, 65534, 2, 5, 65534, 2, 6, 65534, 2, 8, 65534, 2, 9, 65534, 2, 10, 65534, 2, 65531, 65534, 1, 65532, 65534, 1, 65533, 65534, 1, 65534, 65534, 2, 65535, 65534, 2, 0, 65535, 1, 1, 65535, 1, 3, 65535, 1, 4, 65535, 1, 5, 65535, 1, 6, 65535, 1, 7, 65535, 1, 8, 65535, 1, 9, 65535, 1, 10, 65535, 1, 65531, 65535, 1, 65532, 65535, 1, 65533, 65535, 1, 65534, 65535, 1, 65535, 65535, 1 )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 1, 0 )
+}
+
+[node name="ItensIlhaPirata" type="Spatial" parent="."]
+
+[node name="CoqueiroDino" parent="ItensIlhaPirata" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 3, -1 )
+
+[node name="CoqueiroDino2" parent="ItensIlhaPirata" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 3, 25 )
+
+[node name="CoqueiroDino3" parent="ItensIlhaPirata" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 3, 21 )
+
+[node name="PonteMadeira" parent="ItensIlhaPirata" instance=ExtResource( 14 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 17, 2.68257, 29 )
+
+[node name="Arbusto" parent="ItensIlhaPirata" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 3, 27 )
+
+[node name="Arbusto2" parent="ItensIlhaPirata" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 3, 1 )
+
+[node name="Arbusto3" parent="ItensIlhaPirata" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 3, 17 )
+
+[node name="BarrioIlha" parent="ItensIlhaPirata" instance=ExtResource( 16 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 17, 3, 1 )
+
+[node name="MadeiraChao2" parent="ItensIlhaPirata" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 3, 21 )
+
+[node name="PlantaFlorAmarela" parent="ItensIlhaPirata" instance=ExtResource( 18 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 19, 3, 13 )
+
+[node name="Mastro" parent="ItensIlhaPirata" instance=ExtResource( 19 )]
+transform = Transform( -3.78552e-08, 2.18557e-08, 1, 0.5, 0.866025, 0, -0.866025, 0.5, -4.37114e-08, 17.457, 0, 31.858 )
+
+[node name="Mastro2" parent="ItensIlhaPirata" instance=ExtResource( 19 )]
+transform = Transform( 0.866025, -0.5, 0, 0.482963, 0.836516, 0.258819, -0.12941, -0.224144, 0.965926, 5, 1, -9 )
+
+[node name="CaveiraRocha" parent="ItensIlhaPirata" instance=ExtResource( 20 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10.6478, 0, 9.40659 )
+
+[node name="CavernaIlhaCaveira" parent="ItensIlhaPirata" instance=ExtResource( 23 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.01492, 1.33321, 9.0468 )
+
+[node name="Bau" parent="ItensIlhaPirata" instance=ExtResource( 24 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 23, 3, 17 )
+
+[node name="Canhao" parent="ItensIlhaPirata" instance=ExtResource( 25 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 25, 3, 11 )
+
+[node name="ArbustoAmareloDino" parent="ItensIlhaPirata" instance=ExtResource( 26 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 13, 3, 25 )
+
+[node name="MovelVerticalMadeira_Ilha" parent="ItensIlhaPirata" instance=ExtResource( 29 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2.65736, 3 )
+max_distance = 4.0
+
+[node name="PonteMadeiraG" parent="ItensIlhaPirata" instance=ExtResource( 30 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3, 6.70811, 5 )
+
+[node name="block" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 3, -1 )
+
+[node name="block2" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3, 19 )
+
+[node name="block3" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 3, 15 )
+
+[node name="block4" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 3, 11 )
+
+[node name="block5" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 3, 19 )
+
+[node name="block6" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 3, 25 )
+
+[node name="peixe" parent="." instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 7.16223, 5 )
+
+[node name="Cam" type="Spatial" parent="."]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 11, 2, 11 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="target" type="MeshInstance" parent="Cam"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
+visible = false
+mesh = SubResource( 3 )
+
+[node name="Camera" type="Camera" parent="Cam"]
+transform = Transform( -1, 6.18173e-08, -6.18172e-08, 0, 0.707107, 0.707106, 8.74228e-08, 0.707107, -0.707106, 0, 12, -10 )
+environment = ExtResource( 3 )
+projection = 1
+current = true
+size = 30.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -0.965926, 9.05292e-09, -0.258819, 6.94655e-09, 1, 9.05292e-09, 0.258819, 6.94655e-09, -0.965926, 0.3, 0, -0.2 )
+light_color = Color( 0.636719, 0.541653, 0.208923, 1 )
+light_energy = 0.42
+shadow_enabled = true
+
+[node name="home" parent="." instance=ExtResource( 9 )]
+
+[node name="salvar" parent="." instance=ExtResource( 7 )]
+
+[node name="load" parent="." instance=ExtResource( 8 )]
+
+[node name="SoundToggleButton" parent="." instance=ExtResource( 10 )]
+
+[node name="TimerContainer" parent="." instance=ExtResource( 21 )]
+
+[node name="fade" parent="." instance=ExtResource( 27 )]
+
+[connection signal="body_entered" from="Death/DeathZones" to="." method="_on_DeathZones_body_entered"]
+[connection signal="body_entered" from="peixe" to="peixe" method="_on_peixe_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="home/home" to="." method="_on_home_pressed"]
+[connection signal="pressed" from="salvar/salvar" to="." method="_on_salvar_pressed"]
+[connection signal="pressed" from="load/load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="SoundToggleButton/SoundToggleButton" to="." method="_on_SoundToggleButton_pressed"]
+
+[editable path="Death"]
+[editable path="home"]
+[editable path="salvar"]
+[editable path="load"]
+[editable path="SoundToggleButton"]
+[editable path="fade"]

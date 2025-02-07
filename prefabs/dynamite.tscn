@@ -1,0 +1,105 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Scripts/dynamite.gd" type="Script" id=2]
+[ext_resource path="res://prefabs/Anim/tnt.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Blender/IntensInteracao/fogo_02.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/HUDTNT.tscn" type="PackedScene" id=5]
+
+[sub_resource type="BoxShape" id=3]
+
+[sub_resource type="ORMSpatialMaterial" id=37]
+params_specular_mode = 3
+params_blend_mode = 1
+albedo_texture = ExtResource( 4 )
+
+[sub_resource type="Curve" id=34]
+min_value = 0.5
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.25, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=31]
+curve = SubResource( 34 )
+
+[sub_resource type="ParticlesMaterial" id=35]
+emission_shape = 1
+emission_sphere_radius = 0.1
+flag_align_y = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 20.0
+initial_velocity_random = 1.0
+angular_velocity = 3.0
+angular_velocity_random = 1.0
+damping = 0.5
+scale_random = 0.5
+scale_curve = SubResource( 31 )
+color = Color( 1, 1, 1, 0.411765 )
+
+[sub_resource type="SpatialMaterial" id=32]
+flags_transparent = true
+vertex_color_use_as_albedo = true
+albedo_color = Color( 0.772549, 0.980392, 1, 0.152941 )
+
+[sub_resource type="SphereMesh" id=36]
+material = SubResource( 32 )
+radius = 0.5
+radial_segments = 8
+rings = 4
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.521064, 0.838184, 0.515057 )
+
+[sub_resource type="BoxShape" id=2]
+
+[node name="dynamite" type="StaticBody" groups=["block"]]
+collision_layer = 9
+script = ExtResource( 2 )
+
+[node name="AreaAnim" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="AreaAnim"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 3 )
+
+[node name="AtivaTNT" type="MeshInstance" parent="AreaAnim"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0 )
+skeleton = NodePath("../..")
+
+[node name="tnt" parent="AreaAnim/AtivaTNT" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
+
+[node name="HUDTNT" parent="." instance=ExtResource( 5 )]
+
+[node name="MeshInstance" parent="HUDTNT/TNT_Icon_Container/ViewportContainer/TNT_Viewport/Spatial/CameraHUD" index="0"]
+transform = Transform( 1.16997, 0.222297, 0.00190241, -0.266757, 0.974979, 0, -0.00222577, -0.0004229, 0.999998, -0.191971, -0.526351, -7.16368 )
+
+[node name="Explosion" type="Particles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.393232, -0.00158501 )
+material_override = SubResource( 37 )
+cast_shadow = 0
+emitting = false
+amount = 100
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 60
+process_material = SubResource( 35 )
+draw_pass_1 = SubResource( 36 )
+
+[node name="tw_m" type="Tween" parent="."]
+
+[node name="ray_down" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
+enabled = true
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 1.26, 0 )
+shape = SubResource( 1 )
+
+[node name="Area" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 2 )
+
+[editable path="AreaAnim/AtivaTNT/tnt"]
+[editable path="HUDTNT"]

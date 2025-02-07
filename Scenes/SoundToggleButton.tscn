@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Fonts/Dosis-Light.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/Icones/btn_som_ico.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=4]
+size = 22
+font_data = ExtResource( 2 )
+
+[node name="SoundToggleButton" type="Button"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1024.0
+margin_top = -600.0
+margin_right = -1012.0
+margin_bottom = -565.0
+custom_fonts/font = SubResource( 4 )
+flat = true
+
+[node name="SoundToggleButton" type="TextureButton" parent="."]
+margin_right = 157.0
+margin_bottom = 52.0
+texture_normal = ExtResource( 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

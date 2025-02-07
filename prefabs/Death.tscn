@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 1, 0.001, 1 )
+
+[node name="Death" type="Spatial"]
+
+[node name="DeathZones" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="DeathZones"]
+transform = Transform( 29.282, 0, 0, 0, 1, 0, 0, 0, 25.92, 0, 0, 0 )
+shape = SubResource( 1 )

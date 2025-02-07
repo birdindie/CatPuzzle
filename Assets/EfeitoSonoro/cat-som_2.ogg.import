@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/cat-som_2.ogg-ec9e1e56149f62d119941b13631d4d4b.oggstr"
+
+[deps]
+
+source_file="res://Assets/EfeitoSonoro/cat-som_2.ogg"
+dest_files=[ "res://.import/cat-som_2.ogg-ec9e1e56149f62d119941b13631d4d4b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="PlaneMesh" id=1]
+size = Vector2( 200, 200 )
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_transparent = true
+albedo_color = Color( 0.0431373, 0.509804, 0.823529, 0.666667 )
+
+[node name="Water" type="MeshInstance"]
+visible = false
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}

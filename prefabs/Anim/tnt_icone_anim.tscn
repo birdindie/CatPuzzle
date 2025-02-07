@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/Blender/IntensInteracao/Anim/tnt_icone_anim.glb" type="PackedScene" id=1]
+
+[node name="tnt_icone_anim" instance=ExtResource( 1 )]
