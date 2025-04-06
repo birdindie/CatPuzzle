@@ -15,3 +15,11 @@
 # Denote all files that are truly binary and should not be modified.
 *.png binary
 *.jpg binary
+
+
+# Força o Git a manter terminadores de linha consistentes  / Evita que .gd, .tscn, .tres fiquem trocando de LF ↔ CRLF.
+* text=auto
+*.gd text eol=lf
+*.tscn text eol=lf
+*.tres text eol=lf
+
