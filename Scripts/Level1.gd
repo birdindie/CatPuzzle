@@ -42,7 +42,7 @@ func _ready():
 	
 	# Cria e inicia o timer para reiniciar o level
 	level_timer = Timer.new()
-	level_timer.wait_time = 30  # MUDAR PARA 30 ou 60 SEGUNDOS
+	level_timer.wait_time = 40  # MUDAR PARA 30 ou 60 SEGUNDOS
 	level_timer.one_shot = true  # Dispara apenas uma vez
 	level_timer.connect("timeout", self, "_on_Timer2_timeout")
 	add_child(level_timer)
