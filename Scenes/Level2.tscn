@@ -1,0 +1,125 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Scripts/Level1.gd" type="Script" id=1]
+[ext_resource path="res://Meshes/Asfaltos.tres" type="MeshLibrary" id=2]
+[ext_resource path="res://prefabs/biffe.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Itens/LataLixo.tscn" type="PackedScene" id=4]
+[ext_resource path="res://prefabs/block.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/DirectionalLight.tscn" type="PackedScene" id=9]
+[ext_resource path="res://prefabs/peixe.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Ui/HUDTEMPO.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Ui/HUDSOM.tscn" type="PackedScene" id=12]
+[ext_resource path="res://prefabs/Water.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/player.tscn" type="PackedScene" id=14]
+[ext_resource path="res://prefabs/fade.tscn" type="PackedScene" id=16]
+[ext_resource path="res://prefabs/Death.tscn" type="PackedScene" id=18]
+[ext_resource path="res://solo_env.tres" type="Environment" id=19]
+[ext_resource path="res://Ui/hud_control.tscn" type="PackedScene" id=20]
+
+[sub_resource type="CapsuleMesh" id=3]
+
+[node name="Level2" type="Spatial"]
+script = ExtResource( 1 )
+next_level = 3
+apples = 2
+
+[node name="HUDPRINCIPAL" parent="." instance=ExtResource( 20 )]
+
+[node name="HUDTEMPO" parent="." instance=ExtResource( 11 )]
+
+[node name="HUDSOM" parent="." instance=ExtResource( 12 )]
+
+[node name="player" parent="." instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 3, 7 )
+
+[node name="body" parent="player/pivot" index="0"]
+transform = Transform( 2.05285, 0, 0, 0, 1.94715, 0, 0, 0, 2.05285, 0, 0, 0 )
+
+[node name="block" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 3, 11 )
+
+[node name="block2" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 3, 15 )
+
+[node name="block3" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 3, 17 )
+
+[node name="peixe" parent="." instance=ExtResource( 10 )]
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 17, 3, 11 )
+
+[node name="biffe" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 3, 7 )
+
+[node name="Water" parent="." instance=ExtResource( 13 )]
+
+[node name="Death" parent="." instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, -100, 11 )
+
+[node name="AsfaltoBase" type="GridMap" parent="." groups=["wall"]]
+mesh_library = ExtResource( 2 )
+data = {
+"cells": PoolIntArray( 5, 3, 0, 7, 3, 0, 5, 4, 0, 4, 5, 0, 5, 5, 0, 7, 5, 0, 8, 5, 0, 4, 6, 0, 5, 7, 0, 6, 7, 0, 7, 7, 0, 8, 7, 0, -65529, 7, 15, 5, 8, 0, 6, 8, 0, 7, 8, 0, 8, 8, 0, 9, 8, 0, 5, 9, 0, 6, 9, 0, 7, 9, 0 )
+}
+__meta__ = {
+"_editor_clip_": 0,
+"_editor_floor_": Vector3( 0, 0, 0 )
+}
+
+[node name="ItensUrbano" type="Spatial" parent="."]
+
+[node name="Cam" type="Spatial" parent="."]
+transform = Transform( 0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 11, 2, 11 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="target" type="MeshInstance" parent="Cam"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+visible = false
+mesh = SubResource( 3 )
+
+[node name="Camera" type="Camera" parent="Cam"]
+transform = Transform( -1, -6.18172e-08, 6.18172e-08, 0, 0.707107, 0.707107, -8.74228e-08, 0.707107, -0.707107, 0, 12, -10 )
+environment = ExtResource( 19 )
+projection = 1
+current = true
+size = 30.0
+near = 0.5
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="DirectionalLight" parent="." instance=ExtResource( 9 )]
+light_color = Color( 0.635294, 0.541176, 0.207843, 1 )
+light_energy = 0.42
+
+[node name="Timer2" type="Timer" parent="."]
+
+[node name="fade" parent="." instance=ExtResource( 16 )]
+visible = false
+
+[node name="LataLixo" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 3, 17 )
+
+[connection signal="pressed" from="HUDPRINCIPAL/SoundToggleButton/SoundToggleButton" to="." method="_on_SoundToggleButton_pressed"]
+[connection signal="pressed" from="HUDPRINCIPAL/home/home" to="." method="_on_home_pressed"]
+[connection signal="pressed" from="HUDPRINCIPAL/save/salvar" to="." method="_on_salvar_pressed"]
+[connection signal="pressed" from="HUDPRINCIPAL/load/load" to="." method="_on_load_pressed"]
+[connection signal="body_entered" from="player/EfeitoMorte" to="player" method="_on_EfeitoMorte_body_entered"]
+[connection signal="body_entered" from="peixe" to="peixe" method="_on_peixe_body_entered"]
+[connection signal="body_entered" from="biffe" to="biffe" method="_on_biffe_body_entered"]
+[connection signal="body_entered" from="Death/DeathZones" to="." method="_on_DeathZones_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
+
+[editable path="HUDPRINCIPAL"]
+[editable path="player"]
+[editable path="block"]
+[editable path="block2"]
+[editable path="block3"]
+[editable path="Death"]
+[editable path="fade"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Empurra.mp3-05c090b879150f4eb92096b78e696264.mp3str"
+
+[deps]
+
+source_file="res://Assets/EfeitoSonoro/Empurra.mp3"
+dest_files=[ "res://.import/Empurra.mp3-05c090b879150f4eb92096b78e696264.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

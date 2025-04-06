@@ -33,8 +33,7 @@ var id := 0
 func _ready():	
 	pass 
 
-func _process(_delta):
-	$Enemy1L1/pivot/body/Bacteria1_Anim/AnimationPlayer.play("OlhosAction")
+func _process(_delta):	
 	pass
 	
 # SIGNALS / Ativa o LOOP de movimento do INIMIGO

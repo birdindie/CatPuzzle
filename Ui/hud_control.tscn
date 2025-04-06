@@ -1,12 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/hud_control.gd" type="Script" id=1]
 [ext_resource path="res://language/Translate/menu_level/btn_en_save.png" type="Texture" id=2]
 [ext_resource path="res://language/Translate/menu_level/btn_en_restart.png" type="Texture" id=3]
 [ext_resource path="res://language/Translate/menu_level/Hover/btn_press_en_menu.png" type="Texture" id=4]
 [ext_resource path="res://Ui/hud_control.tres" type="DynamicFont" id=5]
-[ext_resource path="res://Assets/Icones/btn_som_ico.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Icones/TimerIcon.png" type="Texture" id=7]
+[ext_resource path="res://Assets/EfeitoSonoro/Empurra.mp3" type="AudioStream" id=6]
 [ext_resource path="res://language/Translate/menu_level/btn_en_menu.png" type="Texture" id=8]
 [ext_resource path="res://language/Translate/menu_level/Hover/btn_press_en_save.png" type="Texture" id=9]
 [ext_resource path="res://language/Translate/menu_level/Hover/btn_press_en_restart.png" type="Texture" id=10]
@@ -34,33 +33,32 @@ margin_left = 824.0
 margin_top = 55.0
 margin_right = 856.0
 margin_bottom = 87.0
-texture = ExtResource( 7 )
 
 [node name="TimerLabel" type="Label" parent="CanvasLayer/TimerIcon"]
-margin_left = 44.0
+margin_left = 71.0
 margin_right = 105.0
 margin_bottom = 45.0
 custom_fonts/font = ExtResource( 5 )
 text = "0:60"
 
 [node name="SoundToggleButton" type="Button" parent="."]
-margin_left = 1056.0
+margin_left = 1063.0
 margin_top = 52.0
 margin_right = 1138.0
 margin_bottom = 103.0
 custom_fonts/font = ExtResource( 5 )
-text = "OFF"
 flat = true
 icon_align = 1
 
 [node name="SoundToggleButton" type="TextureButton" parent="SoundToggleButton"]
-margin_left = -116.0
+margin_left = -31.0
 margin_top = -4.0
-margin_right = 92.0
+margin_right = 157.0
 margin_bottom = 48.0
-texture_normal = ExtResource( 6 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SoundToggleButton"]
+stream = ExtResource( 6 )
+volume_db = -30.0
 
 [node name="home" type="Button" parent="."]
 margin_left = 40.0
@@ -99,3 +97,9 @@ margin_right = 40.0
 margin_bottom = 40.0
 texture_normal = ExtResource( 3 )
 texture_hover = ExtResource( 10 )
+
+[node name="FPSLabel" type="Label" parent="."]
+margin_left = 56.0
+margin_top = 720.0
+margin_right = 96.0
+margin_bottom = 734.0

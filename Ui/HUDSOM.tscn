@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Blender/ItensHud/CaixadeSom.tscn" type="PackedScene" id=1]
+[ext_resource path="res://default_env.tres" type="Environment" id=2]
+[ext_resource path="res://Assets/Fonts/LuckiestGuy.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="World" id=1]
+environment = ExtResource( 2 )
+
+[node name="HUDSOM" type="CanvasLayer"]
+layer = -1
+
+[node name="SOM_Container" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="SOM" type="ViewportContainer" parent="SOM_Container"]
+margin_left = 975.0
+margin_top = 16.0
+
+[node name="TimerLabel" type="Label" parent="SOM_Container/SOM"]
+margin_left = 95.0
+margin_top = 26.0
+margin_right = 124.0
+margin_bottom = 107.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "
+"
+align = 1
+valign = 1
+
+[node name="SOM_Viewport" type="Viewport" parent="SOM_Container/SOM"]
+size = Vector2( 128, 128 )
+world = SubResource( 1 )
+transparent_bg = true
+handle_input_locally = false
+msaa = 2
+hdr = false
+render_target_update_mode = 3
+
+[node name="Spatial" type="Spatial" parent="SOM_Container/SOM/SOM_Viewport"]
+
+[node name="CameraHUD" type="Camera" parent="SOM_Container/SOM/SOM_Viewport/Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.69271, 7.16368 )
+current = true
+fov = 30.0
+
+[node name="MeshInstance" type="MeshInstance" parent="SOM_Container/SOM/SOM_Viewport/Spatial/CameraHUD"]
+transform = Transform( 1.2, 0, 0, 0, 1, 0, 0, 0, 1, -0.191971, -0.691646, -7.16368 )
+skeleton = NodePath("../..")
+
+[node name="CaixadeSom" parent="SOM_Container/SOM/SOM_Viewport/Spatial/CameraHUD/MeshInstance" instance=ExtResource( 1 )]
+transform = Transform( 0.715985, 0, 0.356883, 0, 0.8, 0, -0.356883, 0, 0.715985, 0, 0, 0 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="SOM_Container/SOM/SOM_Viewport/Spatial"]
+light_energy = 0.8

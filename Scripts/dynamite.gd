@@ -4,7 +4,7 @@ var dir = Vector3.ZERO
 var is_moving := false
 
 # Tempo total da explosão em segundos
-var explosion_time := 60.0
+var explosion_time := 30.0
 # Variável que guarda o tempo restante
 var time_left := explosion_time
 

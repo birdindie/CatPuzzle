@@ -9,7 +9,7 @@
 [ext_resource path="res://language/Translate/menu_level/Hover/btn_press_en_menu.png" type="Texture" id=7]
 [ext_resource path="res://language/Translate/menu_level/btn_en_menu.png" type="Texture" id=8]
 [ext_resource path="res://prefabs/fade.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Itens/Girasol.tscn" type="PackedScene" id=10]
+[ext_resource path="res://prefabs/PlantaFlorAmarela.tscn" type="PackedScene" id=10]
 [ext_resource path="res://prefabs/Cogumelos.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Itens/Arvore3.tscn" type="PackedScene" id=12]
 [ext_resource path="res://prefabs/Water.tscn" type="PackedScene" id=13]
@@ -36,7 +36,7 @@ border_color = Color( 0.8, 0.8, 0.8, 0.0313726 )
 script = ExtResource( 2 )
 
 [node name="player" parent="." instance=ExtResource( 4 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 11, 3, 8 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 17.1446, 3, 0.318621 )
 script = null
 
 [node name="Water" parent="." instance=ExtResource( 13 )]
@@ -44,7 +44,7 @@ script = null
 [node name="GridMap" type="GridMap" parent="." groups=["wall"]]
 mesh_library = ExtResource( 1 )
 data = {
-"cells": PoolIntArray( 4, 3, 0, 5, 3, 0, 6, 3, 0, 4, 4, 0, 5, 4, 0, 6, 4, 0, 4, 5, 0, 5, 5, 0, 6, 5, 0, 2, 65529, 0 )
+"cells": PoolIntArray( 7, 0, 0, 8, 0, 0, 9, 0, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 2, 65529, 0, 7, 65535, 0, 8, 65535, 0, 9, 65535, 0 )
 }
 __meta__ = {
 "_editor_clip_": 0,
@@ -79,13 +79,13 @@ light_color = Color( 0.635294, 0.541176, 0.207843, 1 )
 light_energy = 0.45
 
 [node name="Arvore3" parent="." instance=ExtResource( 12 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 3, 11 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.4408, 3, 2.30631 )
+
+[node name="PlantaFlorAmarela" parent="." instance=ExtResource( 10 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 3, -13 )
 
 [node name="Cogumelos" parent="." instance=ExtResource( 11 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 3, 11 )
-
-[node name="GiraSol" parent="." instance=ExtResource( 10 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 3, -13 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.4408, 3, 2.30631 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -109,12 +109,12 @@ margin_top = 50.0
 margin_bottom = 60.0
 
 [node name="Control" type="Control" parent="CanvasLayer/VBoxContainer"]
-margin_right = 1024.0
+margin_right = 1920.0
 size_flags_vertical = 3
 
 [node name="btn_about" type="Button" parent="CanvasLayer/VBoxContainer"]
 margin_top = 4.0
-margin_right = 1024.0
+margin_right = 1920.0
 margin_bottom = 56.0
 custom_colors/font_color_hover = Color( 0.929412, 0.898039, 0.0431373, 1 )
 custom_fonts/font = SubResource( 6 )
@@ -133,7 +133,7 @@ expand = true
 
 [node name="Control2" type="Control" parent="CanvasLayer/VBoxContainer"]
 margin_top = 60.0
-margin_right = 1024.0
+margin_right = 1920.0
 margin_bottom = 60.0
 size_flags_vertical = 3
 

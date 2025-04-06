@@ -343,10 +343,10 @@ cast_to = Vector3( 0, -2, 0 )
 [node name="pivot" type="Spatial" parent="."]
 
 [node name="body" type="MeshInstance" parent="pivot"]
-transform = Transform( 2.09285, 0, 0, 0, 1.90715, 0, 0, 0, 2.09285, 0, 0, 0 )
+transform = Transform( 2.04603, 0, 0, 0, 1.95397, 0, 0, 0, 2.04603, 0, 0, 0 )
 
 [node name="MiaMochila" parent="pivot/body" instance=ExtResource( 3 )]
-transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0 )
+transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/fall = SubResource( 2 )

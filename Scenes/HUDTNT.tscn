@@ -79,8 +79,6 @@ margin_bottom = 40.0
 [node name="ViewportContainer" type="ViewportContainer" parent="TNT_Icon_Container"]
 margin_left = 1136.0
 margin_top = 16.0
-margin_right = 1264.0
-margin_bottom = 144.0
 
 [node name="TimerLabel" type="Label" parent="TNT_Icon_Container/ViewportContainer"]
 margin_left = 95.0
