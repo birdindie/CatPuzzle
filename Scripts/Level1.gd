@@ -24,7 +24,6 @@ var progress_timer = null
 
 # Controle de música de fundo e som
 var is_sound_on := true
-onready var bg_music := $HUDPRINCIPAL/SoundToggleButton/AudioStreamPlayer
 onready var sound_toggle_button := $HUDPRINCIPAL/SoundToggleButton
 
 func _ready():
@@ -53,22 +52,19 @@ func _ready():
 		
 	# Configura o som de fundo com base na variável global
 	if Global.is_sound_on:
-		bg_music.play()
+		MusicManager.play_music()
 		sound_toggle_button.text = "ON"
 	else:
-		bg_music.stop()
+		MusicManager.stop_music()
 		sound_toggle_button.text = "OFF"
 
 func _on_SoundToggleButton_pressed():
-	# Alterna o estado global do som e atualiza a reprodução e o texto do botão
-	Global.is_sound_on = !Global.is_sound_on
-	
+	MusicManager.toggle_music()
 	if Global.is_sound_on:
-		bg_music.play()
 		sound_toggle_button.text = "ON"
 	else:
-		bg_music.stop()
 		sound_toggle_button.text = "OFF"
+
 		
 # INÍCIO - Movimentação com ScreenTouch / MOUSE
 func _input(event: InputEvent) -> void:

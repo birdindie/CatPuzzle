@@ -30,6 +30,7 @@ config/icon="res://Assets/IconesPC/icon256.png"
 
 Global="*res://Scripts/global.gd"
 CursorManager="*res://Scenes/CursorManager.tscn"
+MusicManager="*res://Scenes/MusicManager.tscn"
 
 [display]
 
